@@ -2,10 +2,12 @@ version: "3.8"
    
 services:
   web:
-    build: .
-    command: npm run start
+    build: 
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - /usr/src/app
+    command: npm run start
     environment:
       DB_HOST: "db"
     ports:
